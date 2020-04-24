@@ -6,9 +6,6 @@
 <!-- Mapping configuration details between Customer class and customer -->
 <hibernate-mapping package="com.mvc.bean">
 
-
-
-
 	<class name="Usuario" table="usuario">
 		<id name="usuario" column="usuario"></id>
 		<property name="clave" column="clave"></property>
@@ -17,7 +14,5 @@
 		<property name="telefono" column="telefono"></property>
 		<property name="correo" column="correo"></property>
 	</class>
-	
-
 
 </hibernate-mapping>
