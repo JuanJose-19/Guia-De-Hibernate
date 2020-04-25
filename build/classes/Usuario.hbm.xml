@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTO 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<!-- Mapping configuration details between Customer class and customer -->
+<hibernate-mapping package="com.mvc.bean">
+
+	<class name="Usuario" table="usuario">
+		<id name="usuario" column="usuario"></id>
+		<property name="clave" column="clave"></property>
+		<property name="nombre" column="nombre"></property>
+		<property name="direccion" column="direccion"></property>
+		<property name="telefono" column="telefono"></property>
+		<property name="correo" column="correo"></property>
+	</class>
+
+</hibernate-mapping>

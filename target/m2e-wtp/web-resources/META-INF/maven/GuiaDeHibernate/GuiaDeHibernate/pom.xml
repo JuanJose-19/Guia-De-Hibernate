@@ -3,6 +3,7 @@
   <groupId>GuiaDeHibernate</groupId>
   <artifactId>GuiaDeHibernate</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
@@ -22,25 +23,32 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   
   <dependencies>
-  
-	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>5.1.48</version>
-	</dependency>
-	
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>5.1.48</version>
+</dependency>
+
 	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 	<dependency>
-	    <groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-core</artifactId>
-	    <version>5.4.10.Final</version>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>5.4.10.Final</version>
+
 	</dependency>
-	
-  </dependencies>
-  
+
+</dependencies>
 </project>
