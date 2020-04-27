@@ -7,7 +7,7 @@ public class LoginDAO {
 	
 public String authenticateUser(Usuario usuario){
 		
-		UsuarioDAO usuarioDao = new UsuarioDAO();
+		UsuarioDAO usuarioDao = new HibernateUsuarioDAO();
 		
 		Usuario u = usuarioDao.selectById(usuario.getUsuario());
 		

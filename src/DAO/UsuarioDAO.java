@@ -1,71 +1,20 @@
 package DAO;
 
 import java.util.List;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import modelo.HibernateSession;
 import modelo.Usuario;
 
 
-public class UsuarioDAO implements HUsuarioDAO{
+
+public interface UsuarioDAO {
 	
-	@Override
-	public Usuario selectById(String usuarioId) {
-		// TODO Auto-generated method stub
-		SessionFactory sessionFactory = HibernateSession.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		Usuario usuario = (Usuario) session.get(Usuario.class, usuarioId);
-		session.close();
-		return usuario;
-	}
+	public Usuario selectById(String usuario);
 
-	@Override
-	public List<Usuario> selectAll(){
-		// TODO Auto-generated method stub
-		SessionFactory sessionFactory = HibernateSession.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		List<Usuario> usuarios = session.createCriteria(Usuario.class).list();			
-		session.close();
-		return usuarios;
-	}
+	public List<Usuario> selectAll();
 
-	@Override
-	public void insert(Usuario usuario) {
-		// TODO Auto-generated method stub
-		SessionFactory sessionFactory = HibernateSession.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		String id = (String) session.save(usuario);
-		usuario.setUsuario(id);
-		session.getTransaction().commit();
-		session.close();
-	}
-
-	@Override
-	public void update(Usuario usuario) {
-		// TODO Auto-generated method stub
-		SessionFactory sessionFactory = HibernateSession.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.merge(usuario);
-		session.getTransaction().commit();
-		session.close();
-		
-	}
-
-	@Override
-	public void delete(Usuario usuario) {
-		// TODO Auto-generated method stub
-		SessionFactory sessionFactory = HibernateSession.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.delete(usuario);
-		session.getTransaction().commit();
-		session.close();
-	}
+	public void insert(Usuario usuario);
 	
-	
+	public void update(Usuario usuario);
 
-
+	public void delete(Usuario usuario);
 
 }
